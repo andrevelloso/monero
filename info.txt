@@ -1,0 +1,37 @@
+Monero
+
+Para instalar o minerador de MONERO baixe a release em: https://github.com/xmrig/xmrig/releases
+
+mkdir monero
+cd monero
+wget https://github.com/xmrig/xmrig/releases/download/v6.8.2/xmrig-6.8.2-bionic-x64.tar.gz
+tar -xvf xmrig-6.8.2-bionic-x64.tar.gz
+cd xmrig-6.8.2/
+
+configure config.json - change: em pool, user:
+##############################################
+{
+    "autosave": true,
+    "cpu": true,
+    "opencl": false,
+    "cuda": false,
+    "pools": [
+        {
+            "url": "pool.minexmr.com:443",
+            "user": "41j5KVXqBka2NPCK9PLUxdL6rwNNfRJdWBEB4yxqNR9YQ2g2GhrKB9zZMVKRwtcJi678rkWACbMJbXNsxTr4RjrEVkjnRku",
+            "rig-id": "test",
+            "keepalive": true,
+            "tls": true
+        }
+    ]
+}
+
+###############################################
+
+sudo ./xmrig
+or
+sudo ./xmrig -o pool.minexmr.com:443 -u 41j5KVXqBka2NPCK9PLUxdL6rwNNfRJdWBEB4yxqNR9YQ2g2GhrKB9zZMVKRwtcJi678rkWACbMJbXNsxTr4RjrEVkjnRku -k --tls --rig-id test
+
+Monero Wallet: 41j5KVXqBka2NPCK9PLUxdL6rwNNfRJdWBEB4yxqNR9YQ2g2GhrKB9zZMVKRwtcJi678rkWACbMJbXNsxTr4RjrEVkjnRku
+
+att
